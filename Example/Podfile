@@ -1,0 +1,12 @@
+source 'https://github.com/CocoaPods/Specs.git'
+use_frameworks!
+
+target 'SVGPlayButton_Example', :exclusive => true do
+  pod "SVGPlayButton", :path => "../"
+end
+
+target 'SVGPlayButton_Tests', :exclusive => true do
+  pod "SVGPlayButton", :path => "../"
+
+  
+end
