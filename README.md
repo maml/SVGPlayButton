@@ -5,7 +5,7 @@
 [![License](https://img.shields.io/cocoapods/l/SVGPlayButton.svg?style=flat)](http://cocoapods.org/pods/SVGPlayButton)
 [![Platform](https://img.shields.io/cocoapods/p/SVGPlayButton.svg?style=flat)](http://cocoapods.org/pods/SVGPlayButton)
 
-![](https://drive.google.com/file/d/0B1sheCiOioYGc1NpLWpKd3QxdDA/view?usp=sharing)
+![](./screenshot.png)
 
 ## Usage
 
