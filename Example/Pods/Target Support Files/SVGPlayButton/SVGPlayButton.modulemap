@@ -1,0 +1,6 @@
+framework module SVGPlayButton {
+  umbrella header "SVGPlayButton-umbrella.h"
+
+  export *
+  module * { export * }
+}

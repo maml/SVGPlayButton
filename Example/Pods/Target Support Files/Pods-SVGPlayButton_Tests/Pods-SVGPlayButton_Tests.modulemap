@@ -1,0 +1,6 @@
+framework module Pods_SVGPlayButton_Tests {
+  umbrella header "Pods-SVGPlayButton_Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}

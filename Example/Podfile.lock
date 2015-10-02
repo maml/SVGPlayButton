@@ -1,0 +1,14 @@
+PODS:
+  - SVGPlayButton (0.1.0)
+
+DEPENDENCIES:
+  - SVGPlayButton (from `../`)
+
+EXTERNAL SOURCES:
+  SVGPlayButton:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  SVGPlayButton: c29fed9ea0652ddd6568ecc0ad17571bdb80e19d
+
+COCOAPODS: 0.38.2

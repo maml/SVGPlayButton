@@ -1,0 +1,778 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		00769433024F3EC247CEF649753778C0 /* Pods-SVGPlayButton_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6AA7AA4C244D96CA1A1756B5CE86E374 /* Pods-SVGPlayButton_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		068B6E24C49B50CBA91B5D6ABDD1AE6D /* SVGPlayButton-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CDFF9DA8677B3B196144E34257D89CF /* SVGPlayButton-dummy.m */; };
+		23165D468867D750BD176307E200A3FE /* SVGPlayButton-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F4B3C064681FA137F95E3693C8CA38FF /* SVGPlayButton-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		26EA1A44CDE4D7B072518DF23771FE90 /* SVGPlayButton.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 62AC861FADA2A19289CD4CBFEB5F607D /* SVGPlayButton.bundle */; };
+		28E5809EA6FCCBA87A3667D166490D79 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A87ECFA95D077F3E2B45D692B98BECAC /* Foundation.framework */; };
+		2EF074736C7C197A495AB8667C7421AC /* Pods-SVGPlayButton_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D75EB846A3871BFC640C57CF6135811B /* Pods-SVGPlayButton_Tests-dummy.m */; };
+		35EEE6FC2FCA1F76BA6F47830CFDDE2B /* Pods-SVGPlayButton_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F361D5DAFBDC3A43697C368EFEEE587 /* Pods-SVGPlayButton_Example-dummy.m */; };
+		4EA19B15CCDA28118AF9195256EA3CEF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A87ECFA95D077F3E2B45D692B98BECAC /* Foundation.framework */; };
+		8DE34C3C7513646D95157F66B2740F78 /* SVGPlayButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CF3E8DB3E970A470D85876AAF8E32F /* SVGPlayButton.swift */; };
+		A99E4D9E8DB9BD48372A9ACDB18F258F /* Pods-SVGPlayButton_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 38C3DC209B4E54457304950B982C139E /* Pods-SVGPlayButton_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F23A9C2B50E62A6EBDEC9BF20D81DF71 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A87ECFA95D077F3E2B45D692B98BECAC /* Foundation.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		39F2C1535B327DC4766679720BEA4C8D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5C5157E8BFB0DF20E36C1B4E1DDB45F9;
+			remoteInfo = "SVGPlayButton-SVGPlayButton";
+		};
+		4D6067791CD9DCA0AF395894F1109580 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A9FAB38F8524AFC97D9F77DA9B1625E6;
+			remoteInfo = SVGPlayButton;
+		};
+		75AF1E2FD61858B20A2F87D27828ACE2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A9FAB38F8524AFC97D9F77DA9B1625E6;
+			remoteInfo = SVGPlayButton;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		09958766B26D0BFF3FD956B46AFDC655 /* Pods-SVGPlayButton_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SVGPlayButton_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		0CDFF9DA8677B3B196144E34257D89CF /* SVGPlayButton-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SVGPlayButton-dummy.m"; sourceTree = "<group>"; };
+		1D67D2F68CB497D89E38DFBA23B98182 /* Pods-SVGPlayButton_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SVGPlayButton_Example-resources.sh"; sourceTree = "<group>"; };
+		1E86B5C9DE886A4387D011F220DA0F69 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		285A08C0F10AE84B92C3673B258A70F4 /* SVGPlayButton.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SVGPlayButton.xcconfig; sourceTree = "<group>"; };
+		2B4C06F7DA1FF2CDF25692860AA1ED18 /* SVGPlayButton-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SVGPlayButton-prefix.pch"; sourceTree = "<group>"; };
+		2D6B2BF6F642BF7E3979379517179035 /* Pods-SVGPlayButton_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SVGPlayButton_Example-acknowledgements.plist"; sourceTree = "<group>"; };
+		2F361D5DAFBDC3A43697C368EFEEE587 /* Pods-SVGPlayButton_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SVGPlayButton_Example-dummy.m"; sourceTree = "<group>"; };
+		2F5A3A2C62F12DAA2463AB98D826A2FB /* Pods-SVGPlayButton_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-SVGPlayButton_Tests.modulemap"; sourceTree = "<group>"; };
+		38C3DC209B4E54457304950B982C139E /* Pods-SVGPlayButton_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SVGPlayButton_Example-umbrella.h"; sourceTree = "<group>"; };
+		40CF1A925AAAB49425FEB7D0C490632C /* Pods-SVGPlayButton_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SVGPlayButton_Example-frameworks.sh"; sourceTree = "<group>"; };
+		490C278A3FE80F720F1A8049C4C6F14E /* Pods-SVGPlayButton_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SVGPlayButton_Example.release.xcconfig"; sourceTree = "<group>"; };
+		5953A52838D203E1B2DAF3A6E171E2F9 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5B4A598ED1CBD2BAC10E7F391D0EB34C /* Pods_SVGPlayButton_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SVGPlayButton_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5B6D985C9BAB0AECEEF5D1B1FF5E5D81 /* Pods-SVGPlayButton_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SVGPlayButton_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		62AC861FADA2A19289CD4CBFEB5F607D /* SVGPlayButton.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SVGPlayButton.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		6AA7AA4C244D96CA1A1756B5CE86E374 /* Pods-SVGPlayButton_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SVGPlayButton_Tests-umbrella.h"; sourceTree = "<group>"; };
+		7862DF45195C02F8A3875EEE8C916E93 /* Pods-SVGPlayButton_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SVGPlayButton_Tests-frameworks.sh"; sourceTree = "<group>"; };
+		7F7F2C8ED97185E6FA662C5D0C9089EC /* Pods-SVGPlayButton_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SVGPlayButton_Tests-resources.sh"; sourceTree = "<group>"; };
+		82DEFB3CBC0F257AA14D215E40BC77C8 /* Pods_SVGPlayButton_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SVGPlayButton_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A3871CFAC6FBFD21BC5ECD43B9D515C9 /* Pods-SVGPlayButton_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SVGPlayButton_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
+		A4E37A334985E55AD68A8B6D91B5A1C0 /* Pods-SVGPlayButton_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SVGPlayButton_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		A87ECFA95D077F3E2B45D692B98BECAC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		B8CB3D12417C07B063F0DBB21F809092 /* SVGPlayButton.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = SVGPlayButton.modulemap; sourceTree = "<group>"; };
+		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		C049BD17F449158D78CA2B8B96B7E869 /* Pods-SVGPlayButton_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SVGPlayButton_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		D01863F17F7467793F4DC79467AAA563 /* Pods-SVGPlayButton_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SVGPlayButton_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
+		D0A0454DF8DD8FE9B760B0C8B001D841 /* SVGPlayButton-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "SVGPlayButton-Private.xcconfig"; sourceTree = "<group>"; };
+		D75EB846A3871BFC640C57CF6135811B /* Pods-SVGPlayButton_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SVGPlayButton_Tests-dummy.m"; sourceTree = "<group>"; };
+		D7C39FACC4780446EBC59BDC5E0E6F91 /* SVGPlayButton.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SVGPlayButton.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DD4750000AA7F5C2905F0267D17F6B1B /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E4CF3E8DB3E970A470D85876AAF8E32F /* SVGPlayButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SVGPlayButton.swift; sourceTree = "<group>"; };
+		F4B3C064681FA137F95E3693C8CA38FF /* SVGPlayButton-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SVGPlayButton-umbrella.h"; sourceTree = "<group>"; };
+		FEF842BD862E23902FFE482CFEC5066C /* Pods-SVGPlayButton_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-SVGPlayButton_Example.modulemap"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		38A2156496EF0C5DC30B35C54A921DAC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F23A9C2B50E62A6EBDEC9BF20D81DF71 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3C4AA6F2FEE2866DB25C600D8DB92A37 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4EA19B15CCDA28118AF9195256EA3CEF /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D1BBAB9C79F77E1A27D6979354759E58 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				28E5809EA6FCCBA87A3667D166490D79 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EE07B0E4AF1C3C3F91EFD3B3E5B013EF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1374861D0B86D16BA147EA6ED43613A8 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				1E86B5C9DE886A4387D011F220DA0F69 /* Info.plist */,
+				B8CB3D12417C07B063F0DBB21F809092 /* SVGPlayButton.modulemap */,
+				285A08C0F10AE84B92C3673B258A70F4 /* SVGPlayButton.xcconfig */,
+				D0A0454DF8DD8FE9B760B0C8B001D841 /* SVGPlayButton-Private.xcconfig */,
+				0CDFF9DA8677B3B196144E34257D89CF /* SVGPlayButton-dummy.m */,
+				2B4C06F7DA1FF2CDF25692860AA1ED18 /* SVGPlayButton-prefix.pch */,
+				F4B3C064681FA137F95E3693C8CA38FF /* SVGPlayButton-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/SVGPlayButton";
+			sourceTree = "<group>";
+		};
+		4054F74E86403EDD5B72840AFBF07F8B /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				DBC0787EBDCB95B8316D6A6FD6DB6025 /* Pods-SVGPlayButton_Example */,
+				E56A2F745CB0E3C9C2D5635A5EE595C2 /* Pods-SVGPlayButton_Tests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		53F661C0CA7190D2CF05023FB33D61E4 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				A87ECFA95D077F3E2B45D692B98BECAC /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		70D71A16B7E31F0FD457C167CC1014F4 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				E4CF3E8DB3E970A470D85876AAF8E32F /* SVGPlayButton.swift */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		794995D00AC30B74BFA43208D3FEE0AD /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				70D71A16B7E31F0FD457C167CC1014F4 /* Classes */,
+			);
+			path = Pod;
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */,
+				8EFD6F03A64BC60EB7B05151F720C15C /* Development Pods */,
+				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
+				CCA510CFBEA2D207524CDA0D73C3B561 /* Products */,
+				4054F74E86403EDD5B72840AFBF07F8B /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		8EFD6F03A64BC60EB7B05151F720C15C /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DBE0436E6273BE879DF7D1A16796A0D5 /* SVGPlayButton */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				53F661C0CA7190D2CF05023FB33D61E4 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CCA510CFBEA2D207524CDA0D73C3B561 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				82DEFB3CBC0F257AA14D215E40BC77C8 /* Pods_SVGPlayButton_Example.framework */,
+				5B4A598ED1CBD2BAC10E7F391D0EB34C /* Pods_SVGPlayButton_Tests.framework */,
+				62AC861FADA2A19289CD4CBFEB5F607D /* SVGPlayButton.bundle */,
+				D7C39FACC4780446EBC59BDC5E0E6F91 /* SVGPlayButton.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DBC0787EBDCB95B8316D6A6FD6DB6025 /* Pods-SVGPlayButton_Example */ = {
+			isa = PBXGroup;
+			children = (
+				5953A52838D203E1B2DAF3A6E171E2F9 /* Info.plist */,
+				FEF842BD862E23902FFE482CFEC5066C /* Pods-SVGPlayButton_Example.modulemap */,
+				D01863F17F7467793F4DC79467AAA563 /* Pods-SVGPlayButton_Example-acknowledgements.markdown */,
+				2D6B2BF6F642BF7E3979379517179035 /* Pods-SVGPlayButton_Example-acknowledgements.plist */,
+				2F361D5DAFBDC3A43697C368EFEEE587 /* Pods-SVGPlayButton_Example-dummy.m */,
+				40CF1A925AAAB49425FEB7D0C490632C /* Pods-SVGPlayButton_Example-frameworks.sh */,
+				1D67D2F68CB497D89E38DFBA23B98182 /* Pods-SVGPlayButton_Example-resources.sh */,
+				38C3DC209B4E54457304950B982C139E /* Pods-SVGPlayButton_Example-umbrella.h */,
+				A4E37A334985E55AD68A8B6D91B5A1C0 /* Pods-SVGPlayButton_Example.debug.xcconfig */,
+				490C278A3FE80F720F1A8049C4C6F14E /* Pods-SVGPlayButton_Example.release.xcconfig */,
+			);
+			name = "Pods-SVGPlayButton_Example";
+			path = "Target Support Files/Pods-SVGPlayButton_Example";
+			sourceTree = "<group>";
+		};
+		DBE0436E6273BE879DF7D1A16796A0D5 /* SVGPlayButton */ = {
+			isa = PBXGroup;
+			children = (
+				794995D00AC30B74BFA43208D3FEE0AD /* Pod */,
+				1374861D0B86D16BA147EA6ED43613A8 /* Support Files */,
+			);
+			name = SVGPlayButton;
+			path = ../..;
+			sourceTree = "<group>";
+		};
+		E56A2F745CB0E3C9C2D5635A5EE595C2 /* Pods-SVGPlayButton_Tests */ = {
+			isa = PBXGroup;
+			children = (
+				DD4750000AA7F5C2905F0267D17F6B1B /* Info.plist */,
+				2F5A3A2C62F12DAA2463AB98D826A2FB /* Pods-SVGPlayButton_Tests.modulemap */,
+				C049BD17F449158D78CA2B8B96B7E869 /* Pods-SVGPlayButton_Tests-acknowledgements.markdown */,
+				A3871CFAC6FBFD21BC5ECD43B9D515C9 /* Pods-SVGPlayButton_Tests-acknowledgements.plist */,
+				D75EB846A3871BFC640C57CF6135811B /* Pods-SVGPlayButton_Tests-dummy.m */,
+				7862DF45195C02F8A3875EEE8C916E93 /* Pods-SVGPlayButton_Tests-frameworks.sh */,
+				7F7F2C8ED97185E6FA662C5D0C9089EC /* Pods-SVGPlayButton_Tests-resources.sh */,
+				6AA7AA4C244D96CA1A1756B5CE86E374 /* Pods-SVGPlayButton_Tests-umbrella.h */,
+				09958766B26D0BFF3FD956B46AFDC655 /* Pods-SVGPlayButton_Tests.debug.xcconfig */,
+				5B6D985C9BAB0AECEEF5D1B1FF5E5D81 /* Pods-SVGPlayButton_Tests.release.xcconfig */,
+			);
+			name = "Pods-SVGPlayButton_Tests";
+			path = "Target Support Files/Pods-SVGPlayButton_Tests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		57B69E5EFB16DC5EA3A346522323FE95 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				00769433024F3EC247CEF649753778C0 /* Pods-SVGPlayButton_Tests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7D0CBF55190E9D7A1DD0547B1D408CD2 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A99E4D9E8DB9BD48372A9ACDB18F258F /* Pods-SVGPlayButton_Example-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EEF7F2D6D105C813BADD9555B970175F /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				23165D468867D750BD176307E200A3FE /* SVGPlayButton-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		34C8E7BAAFE55ACFD34228157B388046 /* Pods-SVGPlayButton_Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 08B420615E4A865055F435AF85BD3EC0 /* Build configuration list for PBXNativeTarget "Pods-SVGPlayButton_Tests" */;
+			buildPhases = (
+				98F12B7623B0402D1CCC3E2E63120D18 /* Sources */,
+				3C4AA6F2FEE2866DB25C600D8DB92A37 /* Frameworks */,
+				57B69E5EFB16DC5EA3A346522323FE95 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0637BFC02D6BDD8EB67DDC4E5680954A /* PBXTargetDependency */,
+			);
+			name = "Pods-SVGPlayButton_Tests";
+			productName = "Pods-SVGPlayButton_Tests";
+			productReference = 5B4A598ED1CBD2BAC10E7F391D0EB34C /* Pods_SVGPlayButton_Tests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		5C5157E8BFB0DF20E36C1B4E1DDB45F9 /* SVGPlayButton-SVGPlayButton */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0453BD02D5F438325E3E571AEE06FC4A /* Build configuration list for PBXNativeTarget "SVGPlayButton-SVGPlayButton" */;
+			buildPhases = (
+				9CF7509333D5CBC0B0F9B80E25DFD9E1 /* Sources */,
+				EE07B0E4AF1C3C3F91EFD3B3E5B013EF /* Frameworks */,
+				99FA617B372080ACEB8A0C748B934C2E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "SVGPlayButton-SVGPlayButton";
+			productName = "SVGPlayButton-SVGPlayButton";
+			productReference = 62AC861FADA2A19289CD4CBFEB5F607D /* SVGPlayButton.bundle */;
+			productType = "com.apple.product-type.bundle";
+		};
+		A9FAB38F8524AFC97D9F77DA9B1625E6 /* SVGPlayButton */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A90ABF323B87DC5A1D7C29AB9D77F91D /* Build configuration list for PBXNativeTarget "SVGPlayButton" */;
+			buildPhases = (
+				F56DD05A49C02AA85B329ABADB7E659B /* Sources */,
+				38A2156496EF0C5DC30B35C54A921DAC /* Frameworks */,
+				5B79BC39052FCFEEA1B6064BF10F58E5 /* Resources */,
+				EEF7F2D6D105C813BADD9555B970175F /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				94A94E26B3B0DEE5744E79E6B5779514 /* PBXTargetDependency */,
+			);
+			name = SVGPlayButton;
+			productName = SVGPlayButton;
+			productReference = D7C39FACC4780446EBC59BDC5E0E6F91 /* SVGPlayButton.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		C8A57A3DBE1E4CCC2287E29B62893712 /* Pods-SVGPlayButton_Example */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FE517A02FB85B9FD901BFAAF631C225E /* Build configuration list for PBXNativeTarget "Pods-SVGPlayButton_Example" */;
+			buildPhases = (
+				4EB935EF2CD2E7867CABBED17FF09166 /* Sources */,
+				D1BBAB9C79F77E1A27D6979354759E58 /* Frameworks */,
+				7D0CBF55190E9D7A1DD0547B1D408CD2 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BC5D10FDE61368A36778D6A3119943E3 /* PBXTargetDependency */,
+			);
+			name = "Pods-SVGPlayButton_Example";
+			productName = "Pods-SVGPlayButton_Example";
+			productReference = 82DEFB3CBC0F257AA14D215E40BC77C8 /* Pods_SVGPlayButton_Example.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = CCA510CFBEA2D207524CDA0D73C3B561 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C8A57A3DBE1E4CCC2287E29B62893712 /* Pods-SVGPlayButton_Example */,
+				34C8E7BAAFE55ACFD34228157B388046 /* Pods-SVGPlayButton_Tests */,
+				A9FAB38F8524AFC97D9F77DA9B1625E6 /* SVGPlayButton */,
+				5C5157E8BFB0DF20E36C1B4E1DDB45F9 /* SVGPlayButton-SVGPlayButton */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5B79BC39052FCFEEA1B6064BF10F58E5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				26EA1A44CDE4D7B072518DF23771FE90 /* SVGPlayButton.bundle in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		99FA617B372080ACEB8A0C748B934C2E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4EB935EF2CD2E7867CABBED17FF09166 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				35EEE6FC2FCA1F76BA6F47830CFDDE2B /* Pods-SVGPlayButton_Example-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		98F12B7623B0402D1CCC3E2E63120D18 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2EF074736C7C197A495AB8667C7421AC /* Pods-SVGPlayButton_Tests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9CF7509333D5CBC0B0F9B80E25DFD9E1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F56DD05A49C02AA85B329ABADB7E659B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8DE34C3C7513646D95157F66B2740F78 /* SVGPlayButton.swift in Sources */,
+				068B6E24C49B50CBA91B5D6ABDD1AE6D /* SVGPlayButton-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0637BFC02D6BDD8EB67DDC4E5680954A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SVGPlayButton;
+			target = A9FAB38F8524AFC97D9F77DA9B1625E6 /* SVGPlayButton */;
+			targetProxy = 75AF1E2FD61858B20A2F87D27828ACE2 /* PBXContainerItemProxy */;
+		};
+		94A94E26B3B0DEE5744E79E6B5779514 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "SVGPlayButton-SVGPlayButton";
+			target = 5C5157E8BFB0DF20E36C1B4E1DDB45F9 /* SVGPlayButton-SVGPlayButton */;
+			targetProxy = 39F2C1535B327DC4766679720BEA4C8D /* PBXContainerItemProxy */;
+		};
+		BC5D10FDE61368A36778D6A3119943E3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SVGPlayButton;
+			target = A9FAB38F8524AFC97D9F77DA9B1625E6 /* SVGPlayButton */;
+			targetProxy = 4D6067791CD9DCA0AF395894F1109580 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		09F279326EC84D7F2C8F8921F17EC8FD /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D0A0454DF8DD8FE9B760B0C8B001D841 /* SVGPlayButton-Private.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 0.1.0;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 0.1.0;
+				DYLIB_CURRENT_VERSION = "$(CURRENT_PROJECT_VERSION)";
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/SVGPlayButton/SVGPlayButton-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SVGPlayButton/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/SVGPlayButton/SVGPlayButton.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = SVGPlayButton;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		10DE1947DAC0ED28F6C0A9F9BD75D546 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = "RELEASE=1";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		17341E472D479EE44909BBE8B958BE26 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 490C278A3FE80F720F1A8049C4C6F14E /* Pods-SVGPlayButton_Example.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-SVGPlayButton_Example/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Pods-SVGPlayButton_Example/Pods-SVGPlayButton_Example.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = Pods_SVGPlayButton_Example;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		39CC3DCD8C39430EBA150BFF6341C280 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 09958766B26D0BFF3FD956B46AFDC655 /* Pods-SVGPlayButton_Tests.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-SVGPlayButton_Tests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Pods-SVGPlayButton_Tests/Pods-SVGPlayButton_Tests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = Pods_SVGPlayButton_Tests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		552D02D5BA751AC2E8790D2811D496CA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				ONLY_ACTIVE_ARCH = YES;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		665399D4C786F6E8B23B59653FDA48D4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A4E37A334985E55AD68A8B6D91B5A1C0 /* Pods-SVGPlayButton_Example.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-SVGPlayButton_Example/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Pods-SVGPlayButton_Example/Pods-SVGPlayButton_Example.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = Pods_SVGPlayButton_Example;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		82473455B8EFE019AAAE7C10C0FDA677 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D0A0454DF8DD8FE9B760B0C8B001D841 /* SVGPlayButton-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				PRODUCT_NAME = SVGPlayButton;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
+		8322737C01550BC67185C15278D70490 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D0A0454DF8DD8FE9B760B0C8B001D841 /* SVGPlayButton-Private.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 0.1.0;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 0.1.0;
+				DYLIB_CURRENT_VERSION = "$(CURRENT_PROJECT_VERSION)";
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/SVGPlayButton/SVGPlayButton-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SVGPlayButton/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/SVGPlayButton/SVGPlayButton.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = SVGPlayButton;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		CD634B594AC11A75EF49B829EAA120FC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D0A0454DF8DD8FE9B760B0C8B001D841 /* SVGPlayButton-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				PRODUCT_NAME = SVGPlayButton;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		FB31CEA26749BA31F248C1CF4D3AEF72 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5B6D985C9BAB0AECEEF5D1B1FF5E5D81 /* Pods-SVGPlayButton_Tests.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-SVGPlayButton_Tests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Pods-SVGPlayButton_Tests/Pods-SVGPlayButton_Tests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = Pods_SVGPlayButton_Tests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0453BD02D5F438325E3E571AEE06FC4A /* Build configuration list for PBXNativeTarget "SVGPlayButton-SVGPlayButton" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CD634B594AC11A75EF49B829EAA120FC /* Debug */,
+				82473455B8EFE019AAAE7C10C0FDA677 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		08B420615E4A865055F435AF85BD3EC0 /* Build configuration list for PBXNativeTarget "Pods-SVGPlayButton_Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				39CC3DCD8C39430EBA150BFF6341C280 /* Debug */,
+				FB31CEA26749BA31F248C1CF4D3AEF72 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				552D02D5BA751AC2E8790D2811D496CA /* Debug */,
+				10DE1947DAC0ED28F6C0A9F9BD75D546 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A90ABF323B87DC5A1D7C29AB9D77F91D /* Build configuration list for PBXNativeTarget "SVGPlayButton" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8322737C01550BC67185C15278D70490 /* Debug */,
+				09F279326EC84D7F2C8F8921F17EC8FD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FE517A02FB85B9FD901BFAAF631C225E /* Build configuration list for PBXNativeTarget "Pods-SVGPlayButton_Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				665399D4C786F6E8B23B59653FDA48D4 /* Debug */,
+				17341E472D479EE44909BBE8B958BE26 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}

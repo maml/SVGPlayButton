@@ -7,18 +7,69 @@
 //
 
 import UIKit
+import SVGPlayButton
 
 class ViewController: UIViewController {
-
+    
+    @IBOutlet weak var progressButton: SVGPlayButton!
+    
+    @IBOutlet weak var resizeSlider: UISlider!
+    
+    var tickCount: Int = 0
+    
+    var totalCount: Int = 240
+    
+    var timer: NSTimer?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        self.progressButton.willPlay = { self.progressButtonWillPlayHandler() }
+        self.progressButton.willPause = { self.progressButtonWillPauseHandler() }
+        self.resizeSlider.addTarget(self, action: "slideDragHandler:", forControlEvents: UIControlEvents.ValueChanged)
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        print("!!! MEMORY WARNING !!!")
+        print("this controller has received a memory warning and should dispose of any resources that can be recreated")
     }
-
+    
+    func tickHandler() {
+        
+        self.progressButton.progressStrokeEnd = CGFloat(tickCount) / CGFloat(totalCount)
+        
+        if self.progressButton.progressStrokeEnd == 1.0 {
+            tickCount = 0
+            self.progressButton.resetProgressLayer()
+        }
+        
+        tickCount++
+    }
+    
+    func progressButtonWillPlayHandler() {
+        
+        //
+        // If there is already timer, start it.
+        // If there is NOT already a timer, create one and then start it.
+        //
+        if let timer = self.timer {
+            timer.fire()
+        } else {
+            self.timer = NSTimer.scheduledTimerWithTimeInterval(0.01666, target: self, selector: "tickHandler", userInfo: nil, repeats: true)
+        }
+    }
+    
+    func progressButtonWillPauseHandler() {
+        if let timer = self.timer {
+            timer.invalidate()
+            self.timer = nil
+        }
+    }
+    
+    func slideDragHandler(sender: UISlider) {
+        let val = CGFloat(sender.value)
+        progressButton.transform = CGAffineTransformMakeScale(val, val);
+        progressButton.setNeedsDisplay()
+    }
+    
 }
-
