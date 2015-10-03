@@ -18,15 +18,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Sz-AE-CZO" customClass="SVGPlayButton" customModule="SVGPlayButton">
-                                <rect key="frame" x="272" y="272" width="56" height="56"/>
-                                <animations/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="56" id="TbM-y5-Em0"/>
-                                    <constraint firstAttribute="width" constant="56" id="fn9-g0-uxc"/>
-                                </constraints>
-                            </view>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="2.5" minValue="0.0" maxValue="5" translatesAutoresizingMaskIntoConstraints="NO" id="o9Y-8E-HxZ">
                                 <rect key="frame" x="18" y="562" width="564" height="31"/>
                                 <animations/>
@@ -34,19 +25,27 @@
                                     <constraint firstAttribute="height" constant="30" id="Z66-Pq-60F"/>
                                 </constraints>
                             </slider>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EpZ-Fx-dmh" customClass="SVGPlayButton" customModule="SVGPlayButton">
+                                <rect key="frame" x="272" y="272" width="56" height="56"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="56" id="AU5-BM-fzf"/>
+                                    <constraint firstAttribute="width" constant="56" id="JbN-Up-omF"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="o9Y-8E-HxZ" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="868-fX-VeH"/>
-                            <constraint firstItem="3Sz-AE-CZO" firstAttribute="centerY" secondItem="kh9-bI-dsS" secondAttribute="centerY" id="N1u-DL-c36"/>
+                            <constraint firstItem="EpZ-Fx-dmh" firstAttribute="centerY" secondItem="kh9-bI-dsS" secondAttribute="centerY" id="Fe9-Fc-ib2"/>
+                            <constraint firstItem="EpZ-Fx-dmh" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="OmX-mv-7pO"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="o9Y-8E-HxZ" secondAttribute="bottom" constant="8" id="UKO-MN-XgM"/>
                             <constraint firstItem="o9Y-8E-HxZ" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="UWt-mk-dAd"/>
-                            <constraint firstItem="3Sz-AE-CZO" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="vCo-YV-EbA"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="progressButton" destination="3Sz-AE-CZO" id="bsS-dT-xYL"/>
                         <outlet property="resizeSlider" destination="o9Y-8E-HxZ" id="Dhp-6c-Ds5"/>
                     </connections>
                 </viewController>
