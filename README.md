@@ -52,7 +52,7 @@ print("willPause")
 ```
 
 ## Requirements
-iOS 7.0+
+iOS 8.0+
 ## Installation
 
 SVGPlayButton is available through [CocoaPods](http://cocoapods.org). To install
