@@ -30,7 +30,15 @@ private let kInnerRadiusScaleFactor = CGFloat(0.05)
 
 @IBDesignable public class SVGPlayButton: UIButton {
     
-    private var playing: Bool = false
+    public var playing: Bool = false {
+        didSet {
+            if playing {
+                presentForPlaying()
+            } else {
+                presentForPaused()
+            }
+        }
+    }
     
     private var progressTrackShapeLayer: CAShapeLayer = CAShapeLayer()
     
@@ -203,13 +211,11 @@ private let kInnerRadiusScaleFactor = CGFloat(0.05)
         if playing {
             if let willPause = self.willPause {
                 willPause()
-                presentForPaused()
             }
             playing = false
         } else {
             if let willPlay = self.willPlay {
                 willPlay()
-                presentForPlaying()
             }
             playing = true
         }
