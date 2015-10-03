@@ -14,7 +14,7 @@ This button was built to control audio playback. It could probably be used for o
 It toggles between 'play' and 'pause', has a circle around it, and has the capability to display a 'progress track'. It's a sub-class of UIButton and all visual elements are SVG which means it will scale infinitely up and/or down. The example app demonstrates some of the scaling capability via a slider as well as an example of how to update the button's progress.
 
 It has default colors which can be set to whatever you like. The colors that can be set are:
-* ```progressTrackColor``1 - the outer circle
+* ```progressTrackColor``` - the outer circle
 * ```progressColor``` - the progress circle that fills in the 'track'
 * ```playColor``` - color of the play shape / triangle
 * ```pauseColor``` - color of the pause lines
@@ -33,21 +33,21 @@ In a view controller this could look something like:
 @IBOutlet weak var progressButton: SVGPlayButton!
 
 func viewDidLoad() {
-super.viewDidLoad()
-self.progressButton.willPlay = { self.progressButtonWillPlayHandler() }
-self.progressButton.willPause = { self.progressButtonWillPauseHandler() }
-self.progressButton.progressTrackColor = UIColor.lightGrayColor()
-self.progressButton.progressColor = UIColor.darkGrayColor()
-self.progressButton.playColor = UIColor.grayColor()
-self.progressButton.pauseColor = UIColor.grayColor()
+    super.viewDidLoad()
+    self.progressButton.willPlay = { self.progressButtonWillPlayHandler() }
+    self.progressButton.willPause = { self.progressButtonWillPauseHandler() }
+    self.progressButton.progressTrackColor = UIColor.lightGrayColor()
+    self.progressButton.progressColor = UIColor.darkGrayColor()
+    self.progressButton.playColor = UIColor.grayColor()
+    self.progressButton.pauseColor = UIColor.grayColor()
 }
 
 private func willPlayHandler() {
-print("willPlay")
+    print("willPlay")
 }
 
 private func willPauseHandler() {
-print("willPause")
+    print("willPause")
 }
 ```
 
@@ -59,7 +59,7 @@ SVGPlayButton is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod 'SVGPlayButton', '~> 0.2.1'
+pod 'SVGPlayButton', '~> 0.2.3'
 ```
 
 ## Author
