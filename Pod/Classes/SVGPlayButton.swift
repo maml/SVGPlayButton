@@ -78,9 +78,18 @@ private let kInnerRadiusScaleFactor = CGFloat(0.05)
     
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        self.addTarget(self, action: "touchUpInsideHandler", forControlEvents: UIControlEvents.TouchUpInside)
+        sharedInit()
     }
     
+    override public init(frame: CGRect) {
+        super.init(frame: frame)
+        sharedInit()
+    }
+    
+    private func sharedInit() {
+        self.addTarget(self, action: "touchUpInsideHandler", forControlEvents: UIControlEvents.TouchUpInside)
+    }
+
     override public func drawRect(rect: CGRect) {
 
         //
