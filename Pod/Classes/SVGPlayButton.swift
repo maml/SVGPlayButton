@@ -76,21 +76,13 @@ private let kInnerRadiusScaleFactor = CGFloat(0.05)
     
     public var willPause: (() -> ())?
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-    }
-    
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        sharedInit()
-    }
-    
-    private func sharedInit() {
         self.addTarget(self, action: "touchUpInsideHandler", forControlEvents: UIControlEvents.TouchUpInside)
     }
     
     override public func drawRect(rect: CGRect) {
-        
+
         //
         // Pause
         //
