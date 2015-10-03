@@ -46,6 +46,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="progressButton" destination="EpZ-Fx-dmh" id="JDD-q4-qAc"/>
                         <outlet property="resizeSlider" destination="o9Y-8E-HxZ" id="Dhp-6c-Ds5"/>
                     </connections>
                 </viewController>
