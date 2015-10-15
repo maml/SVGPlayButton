@@ -132,12 +132,12 @@ private let kInnerRadiusScaleFactor = CGFloat(0.05)
         }
         
         pauseShapeLayerLeft.path = pauseLine(.Left).CGPath
-        pauseShapeLayerLeft.fillColor = kDefaultPauseColor.CGColor
+        pauseShapeLayerLeft.fillColor = pauseColor.CGColor
         pauseShapeLayerLeft.hidden = self.playing ? false : true
         self.layer.addSublayer(pauseShapeLayerLeft)
         
         pauseShapeLayerRight.path = pauseLine(.Right).CGPath
-        pauseShapeLayerRight.fillColor = kDefaultPauseColor.CGColor
+        pauseShapeLayerRight.fillColor = pauseColor.CGColor
         pauseShapeLayerRight.hidden = self.playing ? false : true
         self.layer.addSublayer(pauseShapeLayerRight)
         
@@ -157,8 +157,8 @@ private let kInnerRadiusScaleFactor = CGFloat(0.05)
         playPath.addLineToPoint(CGPointMake(playLeftX, midY))
         
         playShapeLayer.path = playPath.CGPath
-        playShapeLayer.strokeColor = kDefaultPlayColor.CGColor
-        playShapeLayer.fillColor = kDefaultPlayColor.CGColor
+        playShapeLayer.strokeColor = playColor.CGColor
+        playShapeLayer.fillColor = playColor.CGColor
         playShapeLayer.hidden = self.playing ? true : false
         self.layer.addSublayer(playShapeLayer)
         
@@ -191,7 +191,7 @@ private let kInnerRadiusScaleFactor = CGFloat(0.05)
         }
         
         progressTrackShapeLayer.path = progressArc()
-        progressTrackShapeLayer.strokeColor = kDefaultProgressTrackColor.CGColor
+        progressTrackShapeLayer.strokeColor = progressTrackColor.CGColor
         progressTrackShapeLayer.fillColor = UIColor.clearColor().CGColor
         progressTrackShapeLayer.lineWidth = arcWidth
         self.layer.addSublayer(progressTrackShapeLayer)
@@ -201,7 +201,7 @@ private let kInnerRadiusScaleFactor = CGFloat(0.05)
         //
         
         progressShapeLayer.path = progressArc()
-        progressShapeLayer.strokeColor = kDefaultProgressColor.CGColor
+        progressShapeLayer.strokeColor = progressColor.CGColor
         progressShapeLayer.fillColor = UIColor.clearColor().CGColor
         progressShapeLayer.lineWidth = arcWidth
         progressShapeLayer.strokeStart = 0
