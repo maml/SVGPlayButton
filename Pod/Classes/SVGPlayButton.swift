@@ -30,14 +30,13 @@ private let kInnerRadiusScaleFactor = CGFloat(0.05)
 
 @IBDesignable public class SVGPlayButton: UIButton {
     
-    @IBInspectable var playing: Bool = false {
+    private var playing: Bool = false {
         didSet {
             if playing {
                 presentForPlaying()
             } else {
                 presentForPaused()
             }
-            setNeedsDisplay()
         }
     }
     
@@ -57,13 +56,13 @@ private let kInnerRadiusScaleFactor = CGFloat(0.05)
     
     private var pauseShapeLayerRight: CAShapeLayer = CAShapeLayer()
     
-    @IBInspectable public var progressColor: UIColor = kDefaultProgressColor
+    public var progressColor: UIColor = kDefaultProgressColor
     
-    @IBInspectable public var progressTrackColor: UIColor = lightGray
+    public var progressTrackColor: UIColor = lightGray
     
-    @IBInspectable public var playColor: UIColor = darkGray
+    public var playColor: UIColor = darkGray
     
-    @IBInspectable public var pauseColor: UIColor = darkGray
+    public var pauseColor: UIColor = darkGray
     
     //
     //  If actions are not disabled, the progress layer's strokeEnd update will animate by default. Because we update this so many times a second, like 60
