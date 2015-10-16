@@ -30,13 +30,14 @@ private let kInnerRadiusScaleFactor = CGFloat(0.05)
 
 @IBDesignable public class SVGPlayButton: UIButton {
     
-    private var playing: Bool = false {
+    @IBInspectable var playing: Bool = false {
         didSet {
             if playing {
                 presentForPlaying()
             } else {
                 presentForPaused()
             }
+            setNeedsDisplay()
         }
     }
     
@@ -56,13 +57,13 @@ private let kInnerRadiusScaleFactor = CGFloat(0.05)
     
     private var pauseShapeLayerRight: CAShapeLayer = CAShapeLayer()
     
-    public var progressColor: UIColor = kDefaultProgressColor
+    @IBInspectable public var progressColor: UIColor = kDefaultProgressColor
     
-    public var progressTrackColor: UIColor = lightGray
+    @IBInspectable public var progressTrackColor: UIColor = lightGray
     
-    public var playColor: UIColor = darkGray
+    @IBInspectable public var playColor: UIColor = darkGray
     
-    public var pauseColor: UIColor = darkGray
+    @IBInspectable public var pauseColor: UIColor = darkGray
     
     //
     //  If actions are not disabled, the progress layer's strokeEnd update will animate by default. Because we update this so many times a second, like 60
@@ -132,12 +133,12 @@ private let kInnerRadiusScaleFactor = CGFloat(0.05)
         }
         
         pauseShapeLayerLeft.path = pauseLine(.Left).CGPath
-        pauseShapeLayerLeft.fillColor = kDefaultPauseColor.CGColor
+        pauseShapeLayerLeft.fillColor = pauseColor.CGColor
         pauseShapeLayerLeft.hidden = self.playing ? false : true
         self.layer.addSublayer(pauseShapeLayerLeft)
         
         pauseShapeLayerRight.path = pauseLine(.Right).CGPath
-        pauseShapeLayerRight.fillColor = kDefaultPauseColor.CGColor
+        pauseShapeLayerRight.fillColor = pauseColor.CGColor
         pauseShapeLayerRight.hidden = self.playing ? false : true
         self.layer.addSublayer(pauseShapeLayerRight)
         
@@ -157,8 +158,8 @@ private let kInnerRadiusScaleFactor = CGFloat(0.05)
         playPath.addLineToPoint(CGPointMake(playLeftX, midY))
         
         playShapeLayer.path = playPath.CGPath
-        playShapeLayer.strokeColor = kDefaultPlayColor.CGColor
-        playShapeLayer.fillColor = kDefaultPlayColor.CGColor
+        playShapeLayer.strokeColor = playColor.CGColor
+        playShapeLayer.fillColor = playColor.CGColor
         playShapeLayer.hidden = self.playing ? true : false
         self.layer.addSublayer(playShapeLayer)
         
@@ -191,7 +192,7 @@ private let kInnerRadiusScaleFactor = CGFloat(0.05)
         }
         
         progressTrackShapeLayer.path = progressArc()
-        progressTrackShapeLayer.strokeColor = kDefaultProgressTrackColor.CGColor
+        progressTrackShapeLayer.strokeColor = progressTrackColor.CGColor
         progressTrackShapeLayer.fillColor = UIColor.clearColor().CGColor
         progressTrackShapeLayer.lineWidth = arcWidth
         self.layer.addSublayer(progressTrackShapeLayer)
@@ -201,7 +202,7 @@ private let kInnerRadiusScaleFactor = CGFloat(0.05)
         //
         
         progressShapeLayer.path = progressArc()
-        progressShapeLayer.strokeColor = kDefaultProgressColor.CGColor
+        progressShapeLayer.strokeColor = progressColor.CGColor
         progressShapeLayer.fillColor = UIColor.clearColor().CGColor
         progressShapeLayer.lineWidth = arcWidth
         progressShapeLayer.strokeStart = 0
