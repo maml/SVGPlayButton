@@ -35,12 +35,6 @@ private let kInnerRadiusScaleFactor = CGFloat(0.05)
         }
     }
     
-    public var isPlaying: Bool {
-        get {
-            return self.playing
-        }
-    }
-    
     private var progressTrackShapeLayer: CAShapeLayer = CAShapeLayer()
     
     private var progressShapeLayer: CAShapeLayer = CAShapeLayer()
