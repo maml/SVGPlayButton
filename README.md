@@ -11,7 +11,7 @@
 
 The button toggles between 'play' and 'pause', has a circle around it, and has the capability to display a 'progress track'. It's a sub-class of UIButton and all visual elements are SVG which means it will scale infinitely up and/or down. The example app demonstrates some of the scaling capability via a slider as well as an example of how to update the button's progress.
 
-It has default colors which can be set to whatever you like. The colors that can be set are:
+It has default colors which can be set either programmatically or via Interface Builder. The colors that can be set are:
 * ```progressTrackColor``` - the outer circle
 * ```progressColor``` - the progress circle that fills in the 'track'
 * ```playColor``` - color of the play shape / triangle
@@ -32,10 +32,6 @@ func viewDidLoad() {
     super.viewDidLoad()
     self.progressButton.willPlay = { self.progressButtonWillPlayHandler() }
     self.progressButton.willPause = { self.progressButtonWillPauseHandler() }
-    self.progressButton.progressTrackColor = UIColor.lightGrayColor()
-    self.progressButton.progressColor = UIColor.darkGrayColor()
-    self.progressButton.playColor = UIColor.grayColor()
-    self.progressButton.pauseColor = UIColor.grayColor()
 }
 
 private func willPlayHandler() {
