@@ -25,7 +25,7 @@ private let kInnerRadiusScaleFactor = CGFloat(0.05)
 
 @IBDesignable public class SVGPlayButton: UIButton {
     
-    private var playing: Bool = false {
+    @IBInspectable public var playing: Bool = false {
         didSet {
             if playing {
                 presentForPlaying()
