@@ -19,8 +19,6 @@ It has default colors which can be set to whatever you like. The colors that can
 
 It has two closures: ```willPlay()``` and ```willPause()```. These are optionals and if have been set, will be called just before the button 'plays' or 'pauses'. The button itself is not responsible for playing or pausing anything and so the closures are a way of letting the button say, "heyyy I'm going to be in a state that indicates something's being played so you should probably play something," to whatever has maintained a reference to it.
 
-There is an ```isPlaying``` boolean attribute that will return true or false depending on if the button's 'playing' or not.
-
 ## Usage
 
 Drag a button onto your storyboard. Set its class to SVGPlayButton and Type to Custom. Connect an outlet to your controller. If you wish set the button's ```willPlay()``` and ```willPause()``` closures to something meaningful and useful to your app. Override default colors as needed.
