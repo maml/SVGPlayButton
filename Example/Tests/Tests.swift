@@ -4,19 +4,30 @@ import SVGPlayButton
 
 class Tests: XCTestCase {
     
+    var svgPlayButton: SVGPlayButton!
+
     override func setUp() {
         super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        svgPlayButton = SVGPlayButton(frame: CGRectMake(0, 0, 25, 25))
     }
     
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
+        svgPlayButton = nil
+    }
+
+    func testItsNotPlayingByDefaut() {
+        XCTAssertFalse(svgPlayButton.playing)
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        XCTAssert(true, "Pass")
+    func testProgressTrackIsZeroByDefault() {
+        XCTAssertTrue(svgPlayButton.progressStrokeEnd == 0)
+    }
+    
+    func testItResetsTheProgressTrack() {
+        svgPlayButton.progressStrokeEnd = 0.75
+        svgPlayButton.resetProgressLayer()
+        XCTAssertTrue(svgPlayButton.progressStrokeEnd == 0)
     }
     
     func testPerformanceExample() {
