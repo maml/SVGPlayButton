@@ -9,9 +9,7 @@
 
 ## About
 
-This button was built to control audio playback. It could probably be used for other stuff but, playing back audio in Tincan is what prompted me to build it.
-
-It toggles between 'play' and 'pause', has a circle around it, and has the capability to display a 'progress track'. It's a sub-class of UIButton and all visual elements are SVG which means it will scale infinitely up and/or down. The example app demonstrates some of the scaling capability via a slider as well as an example of how to update the button's progress.
+The button toggles between 'play' and 'pause', has a circle around it, and has the capability to display a 'progress track'. It's a sub-class of UIButton and all visual elements are SVG which means it will scale infinitely up and/or down. The example app demonstrates some of the scaling capability via a slider as well as an example of how to update the button's progress.
 
 It has default colors which can be set to whatever you like. The colors that can be set are:
 * ```progressTrackColor``` - the outer circle
