@@ -58,7 +58,7 @@ private let kInnerRadiusScaleFactor = CGFloat(0.05)
     //  times a second, there will be a noticeable lag in the view's representation of the path w/r/t where the current strokeEnd actually 'is'. Turning off animations
     //  solves this b/c the path updates immediately, and since we're updating at such a high number of times per second, it looks smooth when one's looking watching the view.
     //
-    public var progressStrokeEnd: CGFloat = 0 {
+    @IBInspectable public var progressStrokeEnd: CGFloat = 0 {
         didSet {
             CATransaction.begin()
             CATransaction.setDisableActions(true)
