@@ -60,6 +60,9 @@ private let kInnerRadiusScaleFactor = CGFloat(0.05)
     //
     @IBInspectable public var progressStrokeEnd: CGFloat = 0 {
         didSet {
+            if progressStrokeEnd < 0 || progressStrokeEnd > 1 {
+                self.resetProgressLayer()
+            }
             CATransaction.begin()
             CATransaction.setDisableActions(true)
             self.progressShapeLayer.strokeEnd = progressStrokeEnd

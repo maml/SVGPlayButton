@@ -30,11 +30,15 @@ class Tests: XCTestCase {
         XCTAssertTrue(svgPlayButton.progressStrokeEnd == 0)
     }
     
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measureBlock() {
-            // Put the code you want to measure the time of here.
-        }
+    func testAttemptingToSetProgressTrackToLessThanZeroMakesItReset() {
+        svgPlayButton.progressStrokeEnd = 0.75
+        svgPlayButton.progressStrokeEnd = -0.25
+        XCTAssertTrue(svgPlayButton.progressStrokeEnd == 0)
     }
     
+    func testAttemptingToSetProgressTrackToGreaterThanZeroMakesItReset() {
+        svgPlayButton.progressStrokeEnd = 0.75
+        svgPlayButton.progressStrokeEnd = 1.25
+        XCTAssertTrue(svgPlayButton.progressStrokeEnd == 0)
+    }
 }
