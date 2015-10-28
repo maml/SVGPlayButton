@@ -8,10 +8,10 @@
 
 Pod::Spec.new do |s|
   s.name             = "SVGPlayButton"
-  s.version          = "0.2.3"
+  s.version          = "0.3.0"
   s.summary          = "A circular play/pause button with progress track."
 
-  s.description      = "This is a button to most likely use for playing audio or video. It toggles between 'play' and 'pause', has a circle around it, and has the capability to display a 'progress track' as whatever you've wired it up to play, plays. It's a sub-class of UIButton and all visual elements are SVG which means it will scale infinitely up and/or down. The example app demonstrates some of this capability via a slider."
+  s.description      = "The button toggles between 'play' and 'pause', has a circle around it, and has the capability to display a 'progress track' as whatever you've wired it up to play, plays. It's a sub-class of UIButton and all visual elements are SVG which means it will scale infinitely up and/or down. The example app demonstrates some of this capability via a slider."
 
   s.homepage         = "https://github.com/maml/SVGPlayButton"
   s.license          = 'MIT'
