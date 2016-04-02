@@ -224,12 +224,14 @@ private let kInnerRadiusScaleFactor = CGFloat(0.05)
         playShapeLayer.hidden = true
         pauseShapeLayerLeft.hidden = false
         pauseShapeLayerRight.hidden = false
+        self.animate()
     }
     
     private func presentForPaused() {
         playShapeLayer.hidden = false
         pauseShapeLayerLeft.hidden = true
         pauseShapeLayerRight.hidden = true
+        self.animate()
     }
     
     private func animate() {
