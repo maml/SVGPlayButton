@@ -159,7 +159,7 @@ private let kInnerRadiusScaleFactor = CGFloat(0.05)
             return degrees * 0.0174532925 // 1 degree ~ 0.0174532925 radians
         }
         
-        let arcWidth = (CGRectGetWidth(rect) * kInnerRadiusScaleFactor) / 2
+        let arcWidth = (CGRectGetWidth(rect) * kInnerRadiusScaleFactor)
         let radius = (CGRectGetMidY(rect) - arcWidth/2)
         
         //
