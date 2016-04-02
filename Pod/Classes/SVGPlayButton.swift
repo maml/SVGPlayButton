@@ -232,4 +232,14 @@ private let kInnerRadiusScaleFactor = CGFloat(0.05)
         pauseShapeLayerRight.hidden = true
     }
     
+    private func animate() {
+        let t1 = CGAffineTransformMakeScale(0.8, 0.8)
+        self.transform = t1
+        UIView.animateWithDuration(0.75, delay: 0, usingSpringWithDamping: 0.225, initialSpringVelocity: 0.7, options: .BeginFromCurrentState, animations: { () -> Void in
+            let t2 = CGAffineTransformMakeScale(1.0, 1.0)
+            self.transform = t2
+            }, completion: { (b) -> Void in
+                //
+        })
+    }
 }
