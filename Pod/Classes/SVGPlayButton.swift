@@ -23,9 +23,9 @@ private let darkGray = UIColor(
 
 private let kInnerRadiusScaleFactor = CGFloat(0.05)
 
-@IBDesignable public class SVGPlayButton: UIButton {
+@IBDesignable open class SVGPlayButton: UIButton {
     
-    @IBInspectable public var playing: Bool = false {
+    @IBInspectable open var playing: Bool = false {
         didSet {
             if playing {
                 presentForPlaying()
@@ -35,30 +35,30 @@ private let kInnerRadiusScaleFactor = CGFloat(0.05)
         }
     }
     
-    private var progressTrackShapeLayer: CAShapeLayer = CAShapeLayer()
+    fileprivate var progressTrackShapeLayer: CAShapeLayer = CAShapeLayer()
     
-    private var progressShapeLayer: CAShapeLayer = CAShapeLayer()
+    fileprivate var progressShapeLayer: CAShapeLayer = CAShapeLayer()
     
-    private var playShapeLayer: CAShapeLayer = CAShapeLayer()
+    fileprivate var playShapeLayer: CAShapeLayer = CAShapeLayer()
     
-    private var pauseShapeLayerLeft: CAShapeLayer = CAShapeLayer()
+    fileprivate var pauseShapeLayerLeft: CAShapeLayer = CAShapeLayer()
     
-    private var pauseShapeLayerRight: CAShapeLayer = CAShapeLayer()
+    fileprivate var pauseShapeLayerRight: CAShapeLayer = CAShapeLayer()
     
-    @IBInspectable public var progressColor: UIColor = salmonColor
+    @IBInspectable open var progressColor: UIColor = salmonColor
     
-    @IBInspectable public var progressTrackColor: UIColor = lightGray
+    @IBInspectable open var progressTrackColor: UIColor = lightGray
     
-    @IBInspectable public var playColor: UIColor = darkGray
+    @IBInspectable open var playColor: UIColor = darkGray
     
-    @IBInspectable public var pauseColor: UIColor = darkGray
+    @IBInspectable open var pauseColor: UIColor = darkGray
     
     //
     //  If actions are not disabled, the progress layer's strokeEnd update will animate by default. Because we update this so many times a second, like 60
     //  times a second, there will be a noticeable lag in the view's representation of the path w/r/t where the current strokeEnd actually 'is'. Turning off animations
     //  solves this b/c the path updates immediately, and since we're updating at such a high number of times per second, it looks smooth when one's looking watching the view.
     //
-    @IBInspectable public var progressStrokeEnd: CGFloat = 0 {
+    @IBInspectable open var progressStrokeEnd: CGFloat = 0 {
         didSet {
             if progressStrokeEnd < 0 || progressStrokeEnd > 1 {
                 self.resetProgressLayer()
@@ -70,9 +70,9 @@ private let kInnerRadiusScaleFactor = CGFloat(0.05)
         }
     }
     
-    public var willPlay: (() -> ())?
+    open var willPlay: (() -> ())?
     
-    public var willPause: (() -> ())?
+    open var willPause: (() -> ())?
     
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -84,36 +84,36 @@ private let kInnerRadiusScaleFactor = CGFloat(0.05)
         sharedInit()
     }
     
-    private func sharedInit() {
-        self.addTarget(self, action: "touchUpInsideHandler", forControlEvents: UIControlEvents.TouchUpInside)
+    fileprivate func sharedInit() {
+        self.addTarget(self, action: #selector(SVGPlayButton.touchUpInsideHandler), for: UIControlEvents.touchUpInside)
     }
-
-    override public func drawRect(rect: CGRect) {
-
+    
+    override open func draw(_ rect: CGRect) {
+        
         //
         // Pause
         //
         
-        let center: CGPoint = CGPointMake(CGRectGetMidX(rect), CGRectGetMidY(rect))
-        let pauseLineHeight = CGRectGetHeight(rect) * 0.357
-        let pauseLineWidth  = CGRectGetWidth(rect) * 0.0714
+        let center: CGPoint = CGPoint(x: rect.midX, y: rect.midY)
+        let pauseLineHeight = rect.height * 0.357
+        let pauseLineWidth  = rect.width * 0.0714
         
         enum PauseLinePosition {
-            case Left
-            case Right
+            case left
+            case right
         }
         
-        func pauseLine(position: PauseLinePosition) -> UIBezierPath {
+        func pauseLine(_ position: PauseLinePosition) -> UIBezierPath {
             
             let pauseLineRectY = (bounds.height/2) - (pauseLineHeight * 0.5)
-            var pauseLineRect = CGRectMake(0, pauseLineRectY, pauseLineWidth, pauseLineHeight)
+            var pauseLineRect = CGRect(x: 0, y: pauseLineRectY, width: pauseLineWidth, height: pauseLineHeight)
             
-            if position == .Left {
+            if position == .left {
                 let pauseLineRectX = (bounds.width / 2) - (pauseLineWidth * 0.5) - (pauseLineWidth * 1.25)
                 pauseLineRect.origin.x = pauseLineRectX
             }
             
-            if position == .Right {
+            if position == .right {
                 let pauseLineRectX = (bounds.width / 2) - (pauseLineWidth * 0.5) + (pauseLineWidth * 1.25)
                 pauseLineRect.origin.x = pauseLineRectX
             }
@@ -123,44 +123,44 @@ private let kInnerRadiusScaleFactor = CGFloat(0.05)
             return pauseLinePath
         }
         
-        pauseShapeLayerLeft.path = pauseLine(.Left).CGPath
-        pauseShapeLayerLeft.fillColor = pauseColor.CGColor
-        pauseShapeLayerLeft.hidden = self.playing ? false : true
+        pauseShapeLayerLeft.path = pauseLine(.left).cgPath
+        pauseShapeLayerLeft.fillColor = pauseColor.cgColor
+        pauseShapeLayerLeft.isHidden = self.playing ? false : true
         self.layer.addSublayer(pauseShapeLayerLeft)
         
-        pauseShapeLayerRight.path = pauseLine(.Right).CGPath
-        pauseShapeLayerRight.fillColor = pauseColor.CGColor
-        pauseShapeLayerRight.hidden = self.playing ? false : true
+        pauseShapeLayerRight.path = pauseLine(.right).cgPath
+        pauseShapeLayerRight.fillColor = pauseColor.cgColor
+        pauseShapeLayerRight.isHidden = self.playing ? false : true
         self.layer.addSublayer(pauseShapeLayerRight)
         
         //
         // Play
         //
         
-        let midY = CGRectGetMidY(rect)
-        let playLeftX = CGRectGetWidth(rect) * 0.4107
+        let midY = rect.midY
+        let playLeftX = rect.width * 0.4107
         
         let playPath = UIBezierPath()
-        playPath.lineJoinStyle = CGLineJoin.Round
-        playPath.moveToPoint(CGPointMake(playLeftX, midY))
-        playPath.addLineToPoint(CGPointMake(playLeftX, (midY - CGRectGetHeight(rect) * 0.17)))
-        playPath.addLineToPoint(CGPointMake(playLeftX + (CGRectGetWidth(rect) * 0.2322), midY))
-        playPath.addLineToPoint(CGPointMake(playLeftX, (midY + CGRectGetHeight(rect) * 0.17)))
-        playPath.addLineToPoint(CGPointMake(playLeftX, midY))
+        playPath.lineJoinStyle = CGLineJoin.round
+        playPath.move(to: CGPoint(x: playLeftX, y: midY))
+        playPath.addLine(to: CGPoint(x: playLeftX, y: (midY - rect.height * 0.17)))
+        playPath.addLine(to: CGPoint(x: playLeftX + (rect.width * 0.2322), y: midY))
+        playPath.addLine(to: CGPoint(x: playLeftX, y: (midY + rect.height * 0.17)))
+        playPath.addLine(to: CGPoint(x: playLeftX, y: midY))
         
-        playShapeLayer.path = playPath.CGPath
-        playShapeLayer.strokeColor = playColor.CGColor
-        playShapeLayer.fillColor = playColor.CGColor
-        playShapeLayer.hidden = self.playing ? true : false
+        playShapeLayer.path = playPath.cgPath
+        playShapeLayer.strokeColor = playColor.cgColor
+        playShapeLayer.fillColor = playColor.cgColor
+        playShapeLayer.isHidden = self.playing ? true : false
         self.layer.addSublayer(playShapeLayer)
         
         // helper
-        func d2R(degrees: CGFloat) -> CGFloat {
+        func d2R(_ degrees: CGFloat) -> CGFloat {
             return degrees * 0.0174532925 // 1 degree ~ 0.0174532925 radians
         }
         
-        let arcWidth = (CGRectGetWidth(rect) * kInnerRadiusScaleFactor)
-        let radius = (CGRectGetMidY(rect) - arcWidth/2)
+        let arcWidth = (rect.width * kInnerRadiusScaleFactor)
+        let radius = (rect.midY - arcWidth/2)
         
         //
         //  Progress 'track'
@@ -172,19 +172,19 @@ private let kInnerRadiusScaleFactor = CGFloat(0.05)
         //
         
         /*
-        let progressTrackPath = UIBezierPath(arcCenter: CGPointMake(CGRectGetMidX(rect), CGRectGetMidY(rect)), radius: radius, startAngle: degrees2Radians(270), endAngle: degrees2Radians(269.99), clockwise: true)
-        progressTrackPath.lineWidth = arcWidth
-        kDefaultProgressTrackColor.setStroke()
-        progressTrackPath.stroke()
-        */
+         let progressTrackPath = UIBezierPath(arcCenter: CGPointMake(CGRectGetMidX(rect), CGRectGetMidY(rect)), radius: radius, startAngle: degrees2Radians(270), endAngle: degrees2Radians(269.99), clockwise: true)
+         progressTrackPath.lineWidth = arcWidth
+         kDefaultProgressTrackColor.setStroke()
+         progressTrackPath.stroke()
+         */
         
         func progressArc() -> CGPath {
-            return UIBezierPath(arcCenter: CGPointMake(CGRectGetMidX(rect), CGRectGetMidY(rect)), radius: radius, startAngle: d2R(270), endAngle: d2R(269.99), clockwise: true).CGPath
+            return UIBezierPath(arcCenter: CGPoint(x: rect.midX, y: rect.midY), radius: radius, startAngle: d2R(270), endAngle: d2R(269.99), clockwise: true).cgPath
         }
         
         progressTrackShapeLayer.path = progressArc()
-        progressTrackShapeLayer.strokeColor = progressTrackColor.CGColor
-        progressTrackShapeLayer.fillColor = UIColor.clearColor().CGColor
+        progressTrackShapeLayer.strokeColor = progressTrackColor.cgColor
+        progressTrackShapeLayer.fillColor = UIColor.clear.cgColor
         progressTrackShapeLayer.lineWidth = arcWidth
         self.layer.addSublayer(progressTrackShapeLayer)
         
@@ -193,8 +193,8 @@ private let kInnerRadiusScaleFactor = CGFloat(0.05)
         //
         
         progressShapeLayer.path = progressArc()
-        progressShapeLayer.strokeColor = progressColor.CGColor
-        progressShapeLayer.fillColor = UIColor.clearColor().CGColor
+        progressShapeLayer.strokeColor = progressColor.cgColor
+        progressShapeLayer.fillColor = UIColor.clear.cgColor
         progressShapeLayer.lineWidth = arcWidth
         progressShapeLayer.strokeStart = 0
         progressShapeLayer.strokeEnd = self.progressStrokeEnd
@@ -202,7 +202,7 @@ private let kInnerRadiusScaleFactor = CGFloat(0.05)
         
     }
     
-    public func resetProgressLayer() {
+    open func resetProgressLayer() {
         self.progressStrokeEnd = 0
     }
     
@@ -220,25 +220,25 @@ private let kInnerRadiusScaleFactor = CGFloat(0.05)
         }
     }
     
-    private func presentForPlaying() {
-        playShapeLayer.hidden = true
-        pauseShapeLayerLeft.hidden = false
-        pauseShapeLayerRight.hidden = false
+    fileprivate func presentForPlaying() {
+        playShapeLayer.isHidden = true
+        pauseShapeLayerLeft.isHidden = false
+        pauseShapeLayerRight.isHidden = false
         self.animate()
     }
     
-    private func presentForPaused() {
-        playShapeLayer.hidden = false
-        pauseShapeLayerLeft.hidden = true
-        pauseShapeLayerRight.hidden = true
+    fileprivate func presentForPaused() {
+        playShapeLayer.isHidden = false
+        pauseShapeLayerLeft.isHidden = true
+        pauseShapeLayerRight.isHidden = true
         self.animate()
     }
     
-    private func animate() {
-        let t1 = CGAffineTransformMakeScale(0.8, 0.8)
+    fileprivate func animate() {
+        let t1 = CGAffineTransform(scaleX: 0.8, y: 0.8)
         self.transform = t1
-        UIView.animateWithDuration(0.75, delay: 0, usingSpringWithDamping: 0.225, initialSpringVelocity: 0.7, options: .BeginFromCurrentState, animations: { () -> Void in
-            let t2 = CGAffineTransformMakeScale(1.0, 1.0)
+        UIView.animate(withDuration: 0.75, delay: 0, usingSpringWithDamping: 0.225, initialSpringVelocity: 0.7, options: .beginFromCurrentState, animations: { () -> Void in
+            let t2 = CGAffineTransform(scaleX: 1.0, y: 1.0)
             self.transform = t2
             }, completion: { (b) -> Void in
                 //
