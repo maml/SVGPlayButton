@@ -45,13 +45,14 @@ private func willPauseHandler() {
 
 ## Requirements
 iOS 8.0+
+Swift 3
 ## Installation
 
 SVGPlayButton is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod 'SVGPlayButton', '~> 0.2.3'
+pod 'SVGPlayButton'
 ```
 
 ## Author
