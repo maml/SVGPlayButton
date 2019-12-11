@@ -23,9 +23,9 @@ private let darkGray = UIColor(
 
 private let kInnerRadiusScaleFactor = CGFloat(0.05)
 
-@IBDesignable open class SVGPlayButton: UIButton {
-    
-    @IBInspectable open var playing: Bool = false {
+@IBDesignable public class SVGPlayButton: UIButton {
+
+    public var playing: Bool = false {
         didSet {
             if playing {
                 presentForPlaying()
@@ -34,31 +34,31 @@ private let kInnerRadiusScaleFactor = CGFloat(0.05)
             }
         }
     }
+
+    private var progressTrackShapeLayer: CAShapeLayer = CAShapeLayer()
     
-    fileprivate var progressTrackShapeLayer: CAShapeLayer = CAShapeLayer()
+    private var progressShapeLayer: CAShapeLayer = CAShapeLayer()
     
-    fileprivate var progressShapeLayer: CAShapeLayer = CAShapeLayer()
+    private var playShapeLayer: CAShapeLayer = CAShapeLayer()
     
-    fileprivate var playShapeLayer: CAShapeLayer = CAShapeLayer()
+    private var pauseShapeLayerLeft: CAShapeLayer = CAShapeLayer()
     
-    fileprivate var pauseShapeLayerLeft: CAShapeLayer = CAShapeLayer()
+    private var pauseShapeLayerRight: CAShapeLayer = CAShapeLayer()
     
-    fileprivate var pauseShapeLayerRight: CAShapeLayer = CAShapeLayer()
+    @IBInspectable public var progressColor: UIColor = salmonColor
     
-    @IBInspectable open var progressColor: UIColor = salmonColor
+    @IBInspectable public var progressTrackColor: UIColor = lightGray
     
-    @IBInspectable open var progressTrackColor: UIColor = lightGray
+    @IBInspectable public var playColor: UIColor = darkGray
     
-    @IBInspectable open var playColor: UIColor = darkGray
-    
-    @IBInspectable open var pauseColor: UIColor = darkGray
+    @IBInspectable public var pauseColor: UIColor = darkGray
     
     //
     //  If actions are not disabled, the progress layer's strokeEnd update will animate by default. Because we update this so many times a second, like 60
     //  times a second, there will be a noticeable lag in the view's representation of the path w/r/t where the current strokeEnd actually 'is'. Turning off animations
     //  solves this b/c the path updates immediately, and since we're updating at such a high number of times per second, it looks smooth when one's looking watching the view.
     //
-    @IBInspectable open var progressStrokeEnd: CGFloat = 0 {
+    public var progressStrokeEnd: CGFloat = 0 {
         didSet {
             if progressStrokeEnd < 0 || progressStrokeEnd > 1 {
                 self.resetProgressLayer()
@@ -69,10 +69,10 @@ private let kInnerRadiusScaleFactor = CGFloat(0.05)
             CATransaction.commit()
         }
     }
+
+    public var willPlay: (() -> ())?
     
-    open var willPlay: (() -> ())?
-    
-    open var willPause: (() -> ())?
+    public var willPause: (() -> ())?
     
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -84,12 +84,12 @@ private let kInnerRadiusScaleFactor = CGFloat(0.05)
         sharedInit()
     }
     
-    fileprivate func sharedInit() {
-        self.addTarget(self, action: #selector(SVGPlayButton.touchUpInsideHandler), for: UIControlEvents.touchUpInside)
+    private func sharedInit() {
+        self.addTarget(self, action: #selector(touchUpInsideHandler), for: UIControlEvents.touchUpInside)
     }
-    
-    override open func draw(_ rect: CGRect) {
-        
+
+    override public func draw(_ rect: CGRect) {
+
         //
         // Pause
         //
@@ -99,21 +99,21 @@ private let kInnerRadiusScaleFactor = CGFloat(0.05)
         let pauseLineWidth  = rect.width * 0.0714
         
         enum PauseLinePosition {
-            case left
-            case right
+            case Left
+            case Right
         }
         
-        func pauseLine(_ position: PauseLinePosition) -> UIBezierPath {
+        func pauseLine(position: PauseLinePosition) -> UIBezierPath {
             
             let pauseLineRectY = (bounds.height/2) - (pauseLineHeight * 0.5)
             var pauseLineRect = CGRect(x: 0, y: pauseLineRectY, width: pauseLineWidth, height: pauseLineHeight)
             
-            if position == .left {
+            if position == .Left {
                 let pauseLineRectX = (bounds.width / 2) - (pauseLineWidth * 0.5) - (pauseLineWidth * 1.25)
                 pauseLineRect.origin.x = pauseLineRectX
             }
             
-            if position == .right {
+            if position == .Right {
                 let pauseLineRectX = (bounds.width / 2) - (pauseLineWidth * 0.5) + (pauseLineWidth * 1.25)
                 pauseLineRect.origin.x = pauseLineRectX
             }
@@ -123,12 +123,12 @@ private let kInnerRadiusScaleFactor = CGFloat(0.05)
             return pauseLinePath
         }
         
-        pauseShapeLayerLeft.path = pauseLine(.left).cgPath
+        pauseShapeLayerLeft.path = pauseLine(position: .Left).cgPath
         pauseShapeLayerLeft.fillColor = pauseColor.cgColor
         pauseShapeLayerLeft.isHidden = self.playing ? false : true
         self.layer.addSublayer(pauseShapeLayerLeft)
         
-        pauseShapeLayerRight.path = pauseLine(.right).cgPath
+        pauseShapeLayerRight.path = pauseLine(position: .Right).cgPath
         pauseShapeLayerRight.fillColor = pauseColor.cgColor
         pauseShapeLayerRight.isHidden = self.playing ? false : true
         self.layer.addSublayer(pauseShapeLayerRight)
@@ -155,7 +155,7 @@ private let kInnerRadiusScaleFactor = CGFloat(0.05)
         self.layer.addSublayer(playShapeLayer)
         
         // helper
-        func d2R(_ degrees: CGFloat) -> CGFloat {
+        func d2R(degrees: CGFloat) -> CGFloat {
             return degrees * 0.0174532925 // 1 degree ~ 0.0174532925 radians
         }
         
@@ -172,14 +172,14 @@ private let kInnerRadiusScaleFactor = CGFloat(0.05)
         //
         
         /*
-         let progressTrackPath = UIBezierPath(arcCenter: CGPointMake(CGRectGetMidX(rect), CGRectGetMidY(rect)), radius: radius, startAngle: degrees2Radians(270), endAngle: degrees2Radians(269.99), clockwise: true)
-         progressTrackPath.lineWidth = arcWidth
-         kDefaultProgressTrackColor.setStroke()
-         progressTrackPath.stroke()
-         */
+        let progressTrackPath = UIBezierPath(arcCenter: CGPointMake(CGRectGetMidX(rect), CGRectGetMidY(rect)), radius: radius, startAngle: degrees2Radians(270), endAngle: degrees2Radians(269.99), clockwise: true)
+        progressTrackPath.lineWidth = arcWidth
+        kDefaultProgressTrackColor.setStroke()
+        progressTrackPath.stroke()
+        */
         
         func progressArc() -> CGPath {
-            return UIBezierPath(arcCenter: CGPoint(x: rect.midX, y: rect.midY), radius: radius, startAngle: d2R(270), endAngle: d2R(269.99), clockwise: true).cgPath
+            return UIBezierPath(arcCenter: CGPoint(x: rect.midX, y: rect.midY), radius: radius, startAngle: d2R(degrees: 270), endAngle: d2R(degrees: 269.99), clockwise: true).cgPath
         }
         
         progressTrackShapeLayer.path = progressArc()
@@ -202,11 +202,11 @@ private let kInnerRadiusScaleFactor = CGFloat(0.05)
         
     }
     
-    open func resetProgressLayer() {
+    public func resetProgressLayer() {
         self.progressStrokeEnd = 0
     }
     
-    func touchUpInsideHandler() {
+    @objc func touchUpInsideHandler() {
         if playing {
             if let willPause = self.willPause {
                 willPause()
@@ -220,21 +220,21 @@ private let kInnerRadiusScaleFactor = CGFloat(0.05)
         }
     }
     
-    fileprivate func presentForPlaying() {
+    private func presentForPlaying() {
         playShapeLayer.isHidden = true
         pauseShapeLayerLeft.isHidden = false
         pauseShapeLayerRight.isHidden = false
         self.animate()
     }
     
-    fileprivate func presentForPaused() {
+    private func presentForPaused() {
         playShapeLayer.isHidden = false
         pauseShapeLayerLeft.isHidden = true
         pauseShapeLayerRight.isHidden = true
         self.animate()
     }
-    
-    fileprivate func animate() {
+
+    private func animate() {
         let t1 = CGAffineTransform(scaleX: 0.8, y: 0.8)
         self.transform = t1
         UIView.animate(withDuration: 0.75, delay: 0, usingSpringWithDamping: 0.225, initialSpringVelocity: 0.7, options: .beginFromCurrentState, animations: { () -> Void in
